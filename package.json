@@ -1,0 +1,22 @@
+{
+  "name": "gulp-bower",
+  "version": "0.1.0",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.2",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-htmlfile-reporter": "^0.3.4",
+    "karma-htmlfilealt-reporter": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-jasmine-runner2-reporter": "^0.3.5",
+    "karma-junit-reporter": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-spec-reporter": "0.0.26",
+    "phantomjs": "^2.1.7"
+  },
+  "dependencies": {
+    "browser-sync": "^2.13.0"
+  }
+}

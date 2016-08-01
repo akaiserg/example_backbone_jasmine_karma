@@ -1,0 +1,6 @@
+\\.git$
+bower_*
+node*
+Phantom*
+jasmine-runner.html
+coverage/

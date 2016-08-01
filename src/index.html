@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test  backbone model</title>
+  <meta name="description" content="">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Last name</th>
+            <th>Age</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+      <div id="form_id">
+
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- sub template table -->
+<script type="text/template" id="data-template">
+  <td><%= name %></td>
+  <td><%= lastName %></td>
+  <td><%= age %></td>
+  <td><%= countExtra %></td>
+  <td>
+    <button class="btn btn-success add-one">+1</button>
+  </td>
+  <td>
+    <button class="btn btn-warning edit-one">Edit</button>
+  </td>
+</script>
+
+
+<script type="text/template" id="form-template">
+  <form role="form">
+  <div class="form-group">
+    <label for="name_id">Name:</label>
+    <input type="text" class="form-control" id="name_id" value="<%= name %>">
+  </div>
+  <div class="form-group">
+    <label for="lastName_id">Last name:</label>
+    <input type="text" class="form-control" id="lastName_id" value="<%= lastName %>">
+  </div>
+  <div class="form-group">
+    <label for="age_id">Age:</label>
+    <input type="text" class="form-control" id="age_id"value="<%= age %>">
+  </div>
+
+  <div id="error_id" class="hide alert alert-danger">
+
+  </div>
+
+  <button type="button" class="btn btn-primary btn-save-info">Save</button>
+  <button type="button" class="btn btn-default btn-close-info">close</button>
+</form>
+<div>
+
+</div>
+</script>
+
+
+</body>
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/underscore/underscore-min.js"></script>
+<script src="../bower_components/backbone-amd/backbone.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--<script src="js/demo.js"></script>-->
+<script src="js/ModelPerson.js"></script>
+<script src="js/CollectionPerson.js"></script>
+<script src="js/ViewPerson.js"></script>
+<script src="js/ViewPersons.js"></script>
+<script src="js/ViewFormPerson.js"></script>
+
+</html>
+
+<script>
+
+var mPerson1= new ModelPerson(
+  {
+    name: "test name 1",
+    lastName: "test last name 1",
+    age:23,
+    global:{
+      val1:'extra info',
+      val2:null
+    },
+    extra:[]
+  }
+);
+var mPerson2= new ModelPerson(
+  {
+    name: "test name 2",
+    lastName: "test last name 2",
+    age:22,
+    global:{
+      val1:'extra info',
+      val2:null
+    },
+    extra:[]
+  }
+);
+var cPerson = new CollectionPerson;
+cPerson.add(mPerson1);
+cPerson.add(mPerson2);
+var vPersons = new ViewPersons({ collection: cPerson });
+
+</script>
